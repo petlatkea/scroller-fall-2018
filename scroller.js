@@ -11,6 +11,10 @@ function init() {
     // Get original text
     text = document.querySelector("#scroller").textContent;
 
+    // fix up all white-space, replace with single space
+    // from: https://stackoverflow.com/questions/1981349/regex-to-replace-multiple-spaces-with-a-single-space
+    text = text.replace(/\s\s+/g, ' ');
+
     // clear the original text from HTML
     document.querySelector("#scroller").textContent = "";
 
